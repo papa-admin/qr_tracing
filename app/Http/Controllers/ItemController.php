@@ -41,6 +41,7 @@ class ItemController extends Controller
         $item->city = $request->city;
         $item->p_num = $request->p_num;
         $item->email = $request->email;
+        $item->rfid = $request->rfid;
         $item->save();
 
         // $i_email = $request->email;

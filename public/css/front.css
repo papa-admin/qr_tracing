@@ -1,0 +1,103 @@
+html{
+    width: auto;
+    height: auto;
+    margin: 0%;
+}
+body{
+    background-color: rgb(236, 236, 231);
+    margin: 0%;
+    text-align: center;
+}
+.main_container{
+    margin-top: 2%;
+    padding-top: 2%;
+    padding-bottom: 3%;
+    width: 100%;
+    text-align: center;
+    /* background-color: rgb(248, 74, 74); */
+    display: block;
+
+}
+
+.sub_container{
+    text-align: center;
+    padding-top: 1%;
+    /* padding-left: 40%; */
+    overflow: auto;
+}
+
+#btn{
+    text-align: center;
+    width: 30%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    border-radius: 8px;
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(253, 97, 97);
+    cursor: pointer;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left:35%;
+    display: block;
+    color: white;
+}
+
+#btn_modal{
+    text-align: center;
+    width: 30%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    border-radius: 8px;
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(253, 97, 97);
+    cursor: pointer;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    margin-left:35%;
+    display: block;
+    color: white;
+}
+
+#btn:hover{
+    background-color: rgb(241, 71, 71);
+    color:rgb(255, 255, 255);
+}
+
+.send_field{
+    border-radius: 8px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 50%;
+    text-align: center;
+    border-color: white;
+}
+
+#form_regis{
+    margin-top: 1%;
+    border-radius: 6px;
+    border-color: rgb(161, 161, 161);
+    width: 40%;
+}
+
+footer{
+    background-color: rgb(167, 193, 241);
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-bottom: 1%;
+    text-align: left;
+}
+
+
+
+/* Animation Gradient */
+/* .stage {
+    animation: animateBg 10s linear infinite;
+    background-image: linear-gradient(0deg,#cf5c5c,#c19b4a,#def2a0,#c6ee4a,#42eca6,#64b3d9,#208ea2,#498ada,#5b73df,#897ed3,#cf5c5c,#c19b4a);
+    background-size: 100% 1100%;
+    height: 100vh;
+    width: 100vw;
+  }
+  @keyframes animateBg {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 0% 100%; }
+  } */

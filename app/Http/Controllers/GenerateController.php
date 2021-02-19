@@ -22,7 +22,7 @@ class GenerateController extends Controller
     {
         // //dd($request);
         // return view('generate');
-        $res_c = Item::where('id', $request['code'])->get();
+        $res_c = Item::where('id', $request['code'])->orwhere('rfid', $request['code'])->get();
         $data = [
             "resc" => $res_c
         ];
@@ -32,7 +32,7 @@ class GenerateController extends Controller
 
     public function search(Request $request)
     {
-        $res_c = Item::where('id', $request['code'])->get();
+        $res_c = Item::where('id', $request['code'])->orwhere('rfid', $request['code'])->get();
         $data = [
             "resc" => $res_c
         ];

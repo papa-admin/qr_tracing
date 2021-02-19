@@ -1,3 +1,4 @@
+@extends('layouts.side')
 @extends('layouts.app')
 @section('content')
 
@@ -33,16 +34,29 @@
                         <th>Last Name</th>
                         <th>First Name</th>
                         <th>Middle Name</th>
+                        <th>Actions</th>
                     </tr>
                     @foreach($items as $row)
                     <tr>
-                        <td><input type="checkbox" class="/"></td>
+                        <td>{!! QrCode::size(50)
+                            ->generate('Hello, '.$row['lname'].' !'."\n".'Your address is '.$row['fname'] ); !!}</td>
                         <td>{{$row['lname']}}</td>
                         <td>{{$row['fname']}}</td>
                         <td>{{$row['mname']}}</td>
+                        <td>
+                        
+                            <form action="{{ route("delete"), $row['id'] }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit">Delete</button>
+                            </form>
+
+                        </td>
                     </tr>
                     @endforeach
                 </table>
+
+                {$items->links() !!}
             </div>
         </div>
     </div>

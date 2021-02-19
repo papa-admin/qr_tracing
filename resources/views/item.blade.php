@@ -44,15 +44,18 @@
                             <div class="container" id="regis_con">
                                 <h5 id="regis_head">Contact Number</h5>
                                 <div class="row">
-                                    <div class="col-1">
+                                    <div class="col">
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col">
                                         <input type="text" placeholder="Phone Number" name="p_num" id="regis_field"><br>
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col">
                                         <input type="text" placeholder="Email" name="email" id="regis_field"><br>
                                     </div>
-                                    <div class="col-1">
+                                    <div class="col">
+                                        <input type="text" placeholder="RFID" name="rfid" id="regis_field"><br>
+                                    </div>
+                                    <div class="col">
                                     </div>
                                 </div>
                             </div>

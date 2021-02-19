@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@extends('layouts.side')
 @section('content')
 
 <div class="container">
@@ -6,9 +7,9 @@
     <div class="row justify-content-center">
        
         <form action="search" method="POST">
-        @csrf
-        <input class="text" placeholder="Input your unique code" name="code">
-        <button type="submit">Search</button>
+            @csrf
+            <input class="text" placeholder="Input your unique code" name="code" autocomplete="off" autofocus>
+            <button type="submit">Search</button>
         </form>
     </div>
 

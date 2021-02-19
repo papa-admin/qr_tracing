@@ -24,6 +24,7 @@ class CreateItemsTable extends Migration
             $table->string('city');
             $table->string('p_num');
             $table->string('email');
+            $table->string('rfid');
             $table->timestamps();
         });
     }

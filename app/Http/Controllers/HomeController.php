@@ -27,4 +27,18 @@ class HomeController extends Controller
         //dd($items);
         return view('home', compact('items'));
     }
+
+    public function show(item $items)
+    {
+        return view('home',compact('items'));
+    } 
+
+    public function delete(Request $request)
+    {
+        dd($request);
+        $request->delete();
+
+        return redirect()->route("home")
+                        ->with('Success','Product deleted successfully');
+    }
 }
