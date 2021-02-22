@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\item;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -20,24 +20,22 @@ class GenerateController extends Controller
 
     public function index(Request $request)
     {
-        // //dd($request);
-        // return view('generate');
-        $res_c = Item::where('id', $request['code'])->orwhere('rfid', $request['code'])->get();
+        $res_c = Employee::where('id', $request['code'])->orwhere('rfid', $request['code'])->get();
         $data = [
             "resc" => $res_c
         ];
 
-        return view('generate')->with($data);
+        return view('rfid.generate')->with($data);
     }
 
     public function search(Request $request)
     {
-        $res_c = Item::where('id', $request['code'])->orwhere('rfid', $request['code'])->get();
+        $res_c = Employee::where('id', $request['code'])->orwhere('rfid', $request['code'])->get();
         $data = [
             "resc" => $res_c
         ];
 
-        return view('generate')->with($data);
+        return view('rfid.generate')->with($data);
     }
 
 

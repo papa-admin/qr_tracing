@@ -37,6 +37,13 @@
     border: 0px;
     border-radius: 5px;
     font-weight: bold;
+    display: block;
+    width:40%;
+
+}
+
+#btn_regis:hover{
+    background-color: rgb(109, 160, 6);
 }
 
 #regis_btn_gen{
@@ -89,6 +96,10 @@ background-color: #b6f5b8;
 
 #home_crud_btns{
     padding-left: 15%;
+}
+
+#card_some{
+    object-position: center;
 }
 
 

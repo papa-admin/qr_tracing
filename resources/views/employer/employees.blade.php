@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Register Item for QR') }}</div>
                     <div class="card-body">
-                        <form action="/regis_item" method="POST" id="regis_item">
+                        <form action="/regis_employee" method="POST" id="regis_item">
                             @csrf
                             <div class="container" id="regis_con_name">
                                 <h5 id="regis_head">Full Name</h5>

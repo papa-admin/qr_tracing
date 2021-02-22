@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class ViewController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -24,15 +24,21 @@ class HomeController extends Controller
     public function index()
     {
         $employees = Employee::all();
-        return view('employer.home', compact('employees'));
+        //dd($items);
+        return view('employer.view', compact('employees'));
     }
 
     public function show(Employee $employees)
     {
-        return view('employer.home',compact('employees'));
+        return view('employer.view',compact('employees'));
     } 
 
-    public function delete(Request $request)    
+    public function delete(Employee $employees)
     {
+        dd($request);
+        $employees->delete();
+
+        return redirect()->route("employer.view")
+                        ->with('Success','Product deleted successfully');
     }
 }

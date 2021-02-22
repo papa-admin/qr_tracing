@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class item extends Model
+class Employee extends Model
 {
     use HasFactory;
 
@@ -18,6 +18,7 @@ class item extends Model
         'brgy',
         'city',
         'p_num',
-        'email'
+        'email',
+        'rfid'
     ];
 }

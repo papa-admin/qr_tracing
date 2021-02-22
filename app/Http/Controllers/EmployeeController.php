@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\item;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 
-class ItemController extends Controller
+class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +14,12 @@ class ItemController extends Controller
      */
     public function index(Request $request)
     { 
-        $item = new item;
-        $item->lname = $request->lname;
-        $item->fname = $request->fname;
-        $item->mname = $request->mname;
+        $employee = new Employee;
+        $employee->lname = $request->lname;
+        $employee->fname = $request->fname;
+        $employee->mname = $request->mname;
         //return view("item");
-        return view('item',['lname' => $item->lname, 'fname' => $item->fname, 'st' => $item->st]);
+        return view('employer.employees',['lname' => $employee->lname, 'fname' => $employee->fname, 'st' => $employee->st]);
 
     }
 
@@ -31,18 +31,18 @@ class ItemController extends Controller
     public function create(Request $request)
     {
         //
-        $item = new item;
-        $item->lname = $request->lname;
-        $item->fname = $request->fname;
-        $item->mname = $request->mname;
-        $item->num_h = $request->num_h;
-        $item->st = $request->st;
-        $item->brgy = $request->brgy;
-        $item->city = $request->city;
-        $item->p_num = $request->p_num;
-        $item->email = $request->email;
-        $item->rfid = $request->rfid;
-        $item->save();
+        $employee = new Employee;
+        $employee->lname = $request->lname;
+        $employee->fname = $request->fname;
+        $employee->mname = $request->mname;
+        $employee->num_h = $request->num_h;
+        $employee->st = $request->st;
+        $employee->brgy = $request->brgy;
+        $employee->city = $request->city;
+        $employee->p_num = $request->p_num;
+        $employee->email = $request->email;
+        $employee->rfid = $request->rfid;
+        $employee->save();
 
         // $i_email = $request->email;
         // \QrCode::email($i_email,'Sample Email','Sample body');
@@ -51,7 +51,7 @@ class ItemController extends Controller
         //        ->format('png')
         //        ->generate('Segovia',public_path('images/qrcode.png'));
        
-        return view('item',['lname' => $item->lname, 'fname' => $item->fname, 'st' => $item->st]);
+        return view('employer.employees',['lname' => $employee->lname, 'fname' => $employee->fname, 'st' => $employee->st]);
     
     }
 
@@ -65,18 +65,18 @@ class ItemController extends Controller
     {
         //
 
-        $item = new item;
-        $item->create($request->all());
-        return view('item');
+        $employee = new Employee;
+        $employee->create($request->all());
+        return view('employer.employees');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\item  $item
+     * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function show(item $item)
+    public function show(Employee $employee)
     {
         //
     }
@@ -84,10 +84,10 @@ class ItemController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\item  $item
+     * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function edit(item $item)
+    public function edit(Employee $employee)
     {
         //
     }
@@ -96,10 +96,10 @@ class ItemController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\item  $item
+     * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, item $item)
+    public function update(Request $request, Employee $employee)
     {
         //
     }
@@ -107,10 +107,10 @@ class ItemController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\item  $item
+     * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function destroy(item $item)
+    public function destroy(Employee $employee)
     {
         //
     }

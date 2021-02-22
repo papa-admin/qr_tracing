@@ -1,25 +1,23 @@
-@extends('layouts.side')
 @extends('layouts.app')
 @section('content')
 
 <div class="container">
-    <h1>Welcome back, {{ Auth::user()->name }}</h1>
-</div>
-
-<div class="container" id="home_crud">
-    <div class="row justify-content-center">
-        <div class="col-lg-8" id="home_crud_btns">
-            <button type="button" id="btn_regis" onclick="window.location='{{ route("items") }}'">Add Client</button>
-            <button type="button" id="btn_regis" onclick="window.location='{{ route("generate") }}'">Generate QR</button>
+<div class="row justify-content-center">
+    <div class="card">
+        <div class="card-body">
+            <button class="btn btn-success" onclick="window.location='{{ route('home') }}'">Home</button>
+            <button class="btn btn-danger" onclick="window.location='{{ route('employees') }}'">Register Employee</button>
+            <button class="btn btn-warning"onclick="window.location='{{ route('generate') }}'">Tracing</button>
         </div>
     </div>
 </div>
-
+</div>
+<br><br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">Employees</div>
                 <!-- <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -36,7 +34,7 @@
                         <th>Middle Name</th>
                         <th>Actions</th>
                     </tr>
-                    @foreach($items as $row)
+                    @foreach($employees as $row)
                     <tr>
                         <td>{!! QrCode::size(50)
                             ->generate('Hello, '.$row['lname'].' !'."\n".'Your address is '.$row['fname'] ); !!}</td>
@@ -56,9 +54,10 @@
                     @endforeach
                 </table>
 
-                {$items->links() !!}
+                <!-- {$items->links() !!} -->
             </div>
         </div>
     </div>
 </div>
+
 @endsection
