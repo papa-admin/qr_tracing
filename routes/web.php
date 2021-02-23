@@ -19,6 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('qrpdf', function () {
+    return view('pdf.qrpdf');
+});
+
+Route::get('qrcode', function () {
+    return view('individual.qrcode');
+});
+
+
 Auth::routes();
 
 Route::get('welcome', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
@@ -34,3 +43,7 @@ Route::post('regis_indiv', [App\Http\Controllers\IndividualController::class, 'c
 Route::get('/generate', [App\Http\Controllers\GenerateController::class, 'index'])->name('generate');
 Route::post('search', [App\Http\Controllers\GenerateController::class, 'search'])->name('search');
 Route::get('delete', [App\Http\Controllers\HomeController::class, 'delete'])->name('delete');
+
+// Route::get('qrpdfs', [App\Http\Controllers\PDFController::class, 'generate'])->name('qrpdfs');
+Route::get('pdf/qrpdf/{{$id}}', [App\Http\Controllers\PDFController::class, 'generate'])->name('qrpdfs');
+

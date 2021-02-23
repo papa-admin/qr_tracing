@@ -117,5 +117,13 @@
         </p>
         
     </footer>
+
+    <script>
+      $(document).ready(function() {
+          $("body").on("contextmenu", function(e) {
+              return false;
+            });
+        });
+    </script>
 </body>
 </html>

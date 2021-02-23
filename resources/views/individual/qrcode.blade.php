@@ -17,13 +17,13 @@
     </div>
 
     <div class="container">
-                {{ $lname }}, {{ $fname }} {{ $mname }} 
+        {{ $lname }}, {{ $fname }} {{ $mname }}
     </div>
     <br><br>
     <div>
-            <button><a href="images/individual/{{$id.'.png'}}" download>Save as Image</a></button>
-            <button>Save as PDF</button>
-            <button onclick="window.location='{{ route("welcome") }}'">Back to Home Page</button>
+            <a class="btn btn-info" href="images/individual/{{$id.'.png'}}" download>Save as Image</a>
+            <a target="_blank" class="btn btn-danger" href="pdf/qrpdf/{{$id}}">Save as PDF</a>
+            <button class="btn btn-dark"onclick="window.location='{{ route("welcome") }}'">Back to Home Page</button>
     </div>
 </div>
 </div>

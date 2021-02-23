@@ -2,3 +2,11 @@
     text-align: center;
     padding-top: 2%;
 }
+
+.link{
+    color: white;
+}
+
+.link:hover{
+    color:white;
+}
