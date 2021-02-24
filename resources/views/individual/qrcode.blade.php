@@ -22,7 +22,7 @@
     <br><br>
     <div>
             <a class="btn btn-info" href="images/individual/{{$id.'.png'}}" download>Save as Image</a>
-            <a target="_blank" class="btn btn-danger" href="pdf/qrpdf/{{$id}}">Save as PDF</a>
+            <a target="_blank" class="btn btn-danger" href="qrpdf/{{ $id }}">Save as PDF</a>
             <button class="btn btn-dark"onclick="window.location='{{ route("welcome") }}'">Back to Home Page</button>
     </div>
 </div>

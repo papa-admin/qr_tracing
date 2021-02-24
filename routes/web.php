@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\http\Controllers\ItemController;
 use App\http\Controllers\GenerateController;
+use App\http\Controllers\PDFController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,5 +46,5 @@ Route::post('search', [App\Http\Controllers\GenerateController::class, 'search']
 Route::get('delete', [App\Http\Controllers\HomeController::class, 'delete'])->name('delete');
 
 // Route::get('qrpdfs', [App\Http\Controllers\PDFController::class, 'generate'])->name('qrpdfs');
-Route::get('pdf/qrpdf/{{$id}}', [App\Http\Controllers\PDFController::class, 'generate'])->name('qrpdfs');
+Route::get('qrpdf/{{ $id }}', [App\Http\Controllers\PDFController::class, 'generate'])->name('qrpdf/{{ $id }}');
 
