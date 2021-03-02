@@ -64,7 +64,7 @@
                                 <button type="submit" name="btn-regis" id="btn_regis">REGISTER</button><br>
                             </div>
                             <div class="row justify-content-center" id="regis_btn">
-                                <button type="button" id="btn_regis" onclick="window.location='{{ route("home") }}'">Cancel</button>
+                                <button type="button" id="btn_regis" onclick="window.location='{{ route("home") }}'">Back to Home</button>
                             </div>
                             </div>
                         </form>

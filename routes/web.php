@@ -28,6 +28,9 @@ Route::get('qrcode', function () {
     return view('individual.qrcode');
 });
 
+Route::get('welcomess', function () {
+    return view('welcomess');
+});
 
 Auth::routes();
 
