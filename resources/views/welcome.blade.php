@@ -23,7 +23,7 @@
     @else
             <div class="sub_container">
                 @if (Route::has('register'))
-                    <p><b>For individuals</bph> who wanted to generate qr code for tracing in establishments</p>
+                    <p><b>For individuals</b> who wanted to generate qr code for tracing in establishments</p>
                     <button type="button" id="btn" data-toggle="modal" data-target="#register_qr"><b>Register for Personal QR</b></button>
                 @endif
                 <p><b>For businesses</b> who wanted to record tracing in your establishments</p>
@@ -107,17 +107,16 @@
     </div>
 
   <!-- This is the footer -->
-    <footer>
-        <p>
-            <b>&#169; Segovia Development Corporation </b><br><br>
-            For inquiries, contact US : <br><br>
-            <i><b>Email: </b><u><a href="">helpIT@segoviadevelopment.com</a></u></i><br>
-            <i><b>Landline Number: </b>12345678</i><br>
-            <i><b>Phone Number: </b>+639123456789</i>
-        </p>
-        
-    </footer>
-
+  <footer>
+    <p>
+        <b>&#169; Segovia Development Corporation </b><br><br>
+        For inquiries, contact US : <br><br>
+        <i><b>Email: </b><u><a href="">helpIT@segoviadevelopment.com</a></u></i><br>
+        <i><b>Landline Number: </b>12345678</i><br>
+        <i><b>Phone Number: </b>+639123456789</i>
+    </p>
+    
+</footer>
     <script>
       $(document).ready(function() {
           $("body").on("contextmenu", function(e) {

@@ -26,6 +26,7 @@ class IndividualController extends Controller
     {
         //
         $individual = new Individual;
+        $individual->uniq_id = uniqid('user_');
         $individual->lname = $request->lname;
         $individual->fname = $request->fname;
         $individual->mname = $request->mname;
@@ -37,7 +38,7 @@ class IndividualController extends Controller
         $individual->email = $request->email;
         $individual->save();
 
-        return view('individual.qrcode',['id'=>$individual->id, 'lname'=>$individual->lname, 'fname'=>$individual->fname, 'mname'=>$individual->mname]);
+        return view('individual.qrcode',['uniq_id'=>$individual->uniq_id, 'lname'=>$individual->lname, 'fname'=>$individual->fname, 'mname'=>$individual->mname]);
     }
 
     /**

@@ -15,6 +15,7 @@ class CreateIndividualsTable extends Migration
     {
         Schema::create('individuals', function (Blueprint $table) {
             $table->id();
+            $table->string('uniq_id');
             $table->string('lname');
             $table->string('fname');
             $table->string('mname');

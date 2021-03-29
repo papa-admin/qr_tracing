@@ -10,10 +10,10 @@
     <br>
     <div class="row justify-content-center">
         {!! QrCode::size(250)
-            ->generate($id); !!}
+            ->generate($uniq_id); !!}
         {!! QrCode::size(250)
             ->format('png')
-            ->generate($id, public_path('images/individual/'.$id.'.png')); !!}
+            ->generate($uniq_id, public_path('images/individual/'.$uniq_id.'.png')); !!}
     </div>
 
     <div class="container">
@@ -21,9 +21,9 @@
     </div>
     <br><br>
     <div>
-            <a class="btn btn-info" href="images/individual/{{$id.'.png'}}" download>Save as Image</a>
-            <a target="_blank" class="btn btn-danger" href="qrpdf/{{ $id }}">Save as PDF</a>
+            <a class="btn btn-info" href="images/individual/{{$uniq_id.'.png'}}" download>Save as Image</a>
+            <a target="_blank" class="btn btn-danger" href="qrpdf/{{ $uniq_id }}">Save as PDF</a>
             <button class="btn btn-dark"onclick="window.location='{{ route("welcome") }}'">Back to Home Page</button>
     </div>
 </div>
-</div>
+</div>        

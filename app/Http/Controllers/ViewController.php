@@ -1,7 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use App\Models\Employee;
+use App\Models\Individual;
+use App\Models\Log;
 use Illuminate\Http\Request;
 
 class ViewController extends Controller
@@ -26,6 +30,20 @@ class ViewController extends Controller
         $employees = Employee::all();
         //dd($items);
         return view('employer.view', compact('employees'));
+
+            // $logs = DB::table('$employees')
+            // ->join('logs', 'employees.uniq_id','=','logs.id_no')
+            // // ->join('employess', 'logs.id_no','=','employees.uniq_id')
+            // ->get();
+
+            // return view('employer.view',compact('logs'));
+    }
+
+    public function view()
+    {
+        $indiv = Individual::all();
+        //dd($items);
+        return view('employer.indiview', compact('indiv'));
     }
 
     public function show(Employee $employees)
@@ -35,7 +53,6 @@ class ViewController extends Controller
 
     public function delete(Employee $employees)
     {
-        dd($request);
         $employees->delete();
 
         return redirect()->route("employer.view")

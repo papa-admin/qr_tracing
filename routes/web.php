@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\http\Controllers\ItemController;
 use App\http\Controllers\GenerateController;
 use App\http\Controllers\PDFController;
+use App\http\Controllers\ViewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +49,5 @@ Route::get('/generate', [App\Http\Controllers\GenerateController::class, 'index'
 Route::post('search', [App\Http\Controllers\GenerateController::class, 'search'])->name('search');
 Route::get('delete', [App\Http\Controllers\HomeController::class, 'delete'])->name('delete');
 
-// Route::get('qrpdfs', [App\Http\Controllers\PDFController::class, 'generate'])->name('qrpdfs');
 Route::get('qrpdf/{{ $id }}', [App\Http\Controllers\PDFController::class, 'generate'])->name('qrpdf/{{ $id }}');
 

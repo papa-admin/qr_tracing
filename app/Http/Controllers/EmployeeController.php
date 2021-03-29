@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class EmployeeController extends Controller
 {
@@ -31,7 +32,8 @@ class EmployeeController extends Controller
     public function create(Request $request)
     {
         //
-        $employee = new Employee;
+        $employee = new Employee;   
+        $employee->uniq_id = uniqid('emp_');
         $employee->lname = $request->lname;
         $employee->fname = $request->fname;
         $employee->mname = $request->mname;
@@ -43,13 +45,6 @@ class EmployeeController extends Controller
         $employee->email = $request->email;
         $employee->rfid = $request->rfid;
         $employee->save();
-
-        // $i_email = $request->email;
-        // \QrCode::email($i_email,'Sample Email','Sample body');
-        
-        //  \QrCode::size(500)
-        //        ->format('png')
-        //        ->generate('Segovia',public_path('images/qrcode.png'));
        
         return view('employer.employees',['lname' => $employee->lname, 'fname' => $employee->fname, 'st' => $employee->st]);
     
@@ -68,6 +63,22 @@ class EmployeeController extends Controller
         $employee = new Employee;
         $employee->create($request->all());
         return view('employer.employees');
+    }
+
+    protected function validator(Request $request)
+    {
+        return Validator::make($request, [
+            'lname' => ['required', 'string', 'max:255'],
+            'fname' => ['required', 'string', 'max:255'],
+            'mname' => ['required', 'string', 'max:255'],
+            'num_h' => ['required', 'string', 'max:255'],
+            'st' => ['required', 'string', 'max:255'],
+            'brgy' => ['required', 'string', 'max:255'],
+            'city' => ['required', 'string', 'max:255'],
+            'p_num' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'max:255'],
+            'rfid' => ['required', 'string', 'max:255'],
+        ]);
     }
 
     /**

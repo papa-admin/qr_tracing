@@ -26,7 +26,7 @@
                     @endif
                     Welcome back, {{ Auth::user()->name }}
                 </div> -->
-                <table class="table table-bordered" id="home_table">
+                <table class="table table-striped table-bordered" id="home_table">
                     <tr>
                         <th></th>
                         <th>Last Name</th>
@@ -37,13 +37,13 @@
                     @foreach($employees as $row)
                     <tr>
                         <td>{!! QrCode::size(50)
-                            ->generate('Hello, '.$row['lname'].' !'."\n".'Your address is '.$row['fname'] ); !!}</td>
+                            ->generate( $row['uniq_id'] ); !!}</td>
                         <td>{{$row['lname']}}</td>
                         <td>{{$row['fname']}}</td>
                         <td>{{$row['mname']}}</td>
                         <td>
                         
-                            <form action="{{ route("delete"), $row['id'] }}" method="POST">
+                            <form action="{{ route("delete", $row['id']) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit">Delete</button>
@@ -59,5 +59,10 @@
         </div>
     </div>
 </div>
+<script>
+$(document).ready(function() {
+    $('#home_table').DataTable();
+} );
+</script>
 
 @endsection
